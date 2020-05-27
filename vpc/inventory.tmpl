@@ -1,0 +1,12 @@
+[localhost]
+127.0.0.1  ansible_connection=local
+
+[www]
+www1  ansible_host=${www1}
+
+[www:vars]
+ansible_ssh_user=ubuntu
+ansible_ssh_private_key_file=${ssh_key_file}
+
+[allNode:children]
+www
